@@ -1,0 +1,27 @@
+/*
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++ iniciando projeto
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+*/
+//!Em computadores ainda sem Typescript instalado, pode-se instalar globalmente pra não ter q instalar em cada projeto.
+--mas a maquina q for executar o sistema, tem q ter tbm esses itens instalados pois eles não vão ficar no projeto
+//npm install typescript -g
+
+//!para inciar e criar a package.json (-y para não precisar responder questões e ele criar padrão)
+//npm init -y 
+
+//!para criar o tsconfig.json e iniciar o 'typescript'
+//npx tsc --init
+
+//pra uso recorrente (descrições de cada um acima)
+npm init -y
+npx tsc --init
+
+--pra criar a versao javascript
+npx tsc 'arquivo'
+
+--pra executar o javascript
+node 'arquivouivo.js'
+
+--pra excutar diretamente em typescript
+npx tsx 'arquivo' 
