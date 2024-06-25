@@ -1,0 +1,10 @@
+LIB
+"lib": ["ESNext", "DOM"],
+
+
+
+--se for pra criar os js
+"outDir": "./dist", 
+
+--pra compilar os arquivos ts (ele vai jogar os arquivos para a pasta dist - ou outra configurada no comando acima)
+npx tsc
