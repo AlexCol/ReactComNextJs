@@ -25,3 +25,6 @@ node 'arquivouivo.js'
 
 --pra excutar diretamente em typescript
 npx tsx 'arquivo' 
+
+pra rodar diretamente um arquivo ts sem precisar de mais nada
+ts-node index.ts
