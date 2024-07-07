@@ -1,0 +1,16 @@
+para criar
+npx create-react-app 11_react_com_ts --template typescript
+ou
+//para criar na mesma pasta que se está
+npx create-react-app . --template typescript 
+
+ou
+
+npm create vite@latest
+ou
+npm init vite
+
+fold all
+Ctrl + K Ctrl + 0
+unfold all
+Ctrl + K Ctrl + J
