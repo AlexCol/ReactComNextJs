@@ -1,0 +1,66 @@
+para criar
+npx create-react-app 11_react_com_ts --template typescript
+
+ou
+
+npm create vite@latest
+ou
+npm init vite
+
+fold all
+Ctrl + K Ctrl + 0
+unfold all
+Ctrl + K Ctrl + J
+
+----para criação do json server (feito na sessão 07)
+npm i json-server
+npm install json-server@0.17.0 (usar essa, pois a mais nova parece ter problemas)
+--depois criar uma pasta 'data' onde serão inseridos dados
+--então criar um script em package.json para rodar a api
+"server": "json-server --watch data/db.json --port 3005"
+--a porta fica a critério(sem informar ela, o padrão é a 3000)
+
+---pra uso do axios
+npm install axios
+npm install --save-dev @types/axios
+
+---pra criação de rotas
+npm install react-router-dom
+
+---para leitura de cookies
+npm install js-cookie
+npm install --save-dev @types/js-cookie
+
+npm install react-cookie
+npm install --save-dev @types/react-cookie
+
+////quill
+npm install react-quill
+
+///bootstrap
+npm install react-bootstrap bootstrap
+npm install --save-dev @types/react-bootstrap
+
+///react-icons
+npm install react-icons
+npm install --save-dev @types/react-icons
+
+npm uninstall react-bootstrap bootstrap
+
+/*
+tsrafce --pra criar o compomente com props
+rafce --sem props
+*/
+
+/*
+npm u --save-dev @types/node
+*/
+
+/*
+mkcert -install
+mkcert localhost
+*/
+
+openssl genrsa -out localhost.key 2048
+openssl req -new -x509 -key localhost.key -out localhost.crt -days 3650 -subj "/CN=localhost"
+
