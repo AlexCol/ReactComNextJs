@@ -1,5 +1,5 @@
 para criar
-npx create-react-app 11_react_com_ts --template typescript
+npx create-react-app 01_usestate --template typescript
 ou
 //para criar na mesma pasta que se está
 npx create-react-app . --template typescript 
