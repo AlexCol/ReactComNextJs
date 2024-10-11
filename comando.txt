@@ -34,6 +34,10 @@ npm install --save-dev @types/js-cookie
 npm install react-cookie
 npm install --save-dev @types/react-cookie
 
+npm install prop-types
+
+npm install lottie-web
+
 ////quill
 npm install react-quill
 
