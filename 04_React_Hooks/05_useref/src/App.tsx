@@ -1,14 +1,16 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import './App.css';
-import PostComponent, { iPosts } from './PostComponent';
+import PostComponent, { iPostsProps } from './PostComponent';
 
 function App() {
   console.log('App renderizado');
-  const [posts, setPosts] = useState<iPosts[]>([]);
+  const [posts, setPosts] = useState<iPostsProps[]>([]);
   const [value, setValue] = useState<string>('');
+  const input = useRef<HTMLInputElement>() as React.MutableRefObject<HTMLInputElement>;
 
-  const handleClick = () => {
-
+  const handleClick = (value: string) => {
+    setValue(value);
+    input.current.focus();
   }
 
   useEffect(() => {
@@ -27,6 +29,7 @@ function App() {
       {posts.length > 0 && (
         <p>
           <input
+            ref={input}
             type="search"
             value={value}
             onChange={(e) => setValue(e.target.value)}
@@ -37,8 +40,8 @@ function App() {
       {
         useMemo(() => {
           return (
-            posts.length > 0 && posts.map((post) => {
-              return <PostComponent key={post.id} post={post} onClick={handleClick} />
+            posts.length > 0 && posts.map((post: iPostsProps) => {
+              return <PostComponent key={post.id} post={post} onClickHandler={handleClick} />
             })
           );
         }, [posts])
