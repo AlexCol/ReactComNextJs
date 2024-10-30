@@ -7,6 +7,7 @@ function App() {
   const [posts, setPosts] = useState<iPostsProps[]>([]);
   const [value, setValue] = useState<string>('');
   const input = useRef<HTMLInputElement>() as React.MutableRefObject<HTMLInputElement>;
+  const contatdor = useRef<number>(0);
 
   const handleClick = (value: string) => {
     setValue(value);
@@ -23,8 +24,14 @@ function App() {
     buscaDadosApi();
   }, []);
 
+  useEffect(() => {
+    contatdor.current++;
+  });
+
   return (
     <div className="App">
+
+      <h3>Renderizou {contatdor.current}x</h3>
 
       {posts.length > 0 && (
         <p>
