@@ -1,0 +1,70 @@
+//arquivo com códigos unidos em um unico arquivo (reducer e context)
+
+/*
+import React, { createContext, ReactNode, useReducer } from 'react'
+
+//! Tipagem do tipo de estado global
+export interface IAppGlobalState {
+  title: string;
+  body: string;
+  counter: number;
+}
+
+//! Estado inicial do contexto
+const initialGlobalState: IAppGlobalState = {
+  title: 'Título do contexto',
+  body: 'Body do contexto',
+  counter: 0,
+}
+
+//! Tipagem das ações do reducer global
+interface IGlobalReducerDispatch {
+  type: 'change' | 'return' | 'counterup' | 'counterdown' | 'update';
+  payload?: string;
+}
+
+//! Tipagem do contexto global (estado e dispatch)
+export interface IAppGlobalContext {
+  state: IAppGlobalState;
+  dispatch: React.Dispatch<IGlobalReducerDispatch>;
+}
+
+//! Criando o contexto global
+export const AppGlobalContext = createContext<IAppGlobalContext>({
+  state: initialGlobalState,
+  dispatch: () => { } // Função vazia, apenas para não dar erro pois o dispatch é obrigatório, não será usado pois o contexto global será usado com useReducer
+});
+
+//! Função para ajustar o estado global
+function globalReducer(state: IAppGlobalState, action: IGlobalReducerDispatch) {
+  console.log('state', state, 'action', action);
+  switch (action.type) {
+    case 'change':
+      return { ...state, title: 'Novo título' };
+    case 'return':
+      return { ...state, title: 'Título do contexto' };
+    case 'counterup':
+      return { ...state, counter: state.counter + 1 };
+    case 'counterdown':
+      return { ...state, counter: state.counter - 1 };
+    case 'update':
+      return { ...state, title: action.payload || 'Título vazio' };
+    default:
+      return { ...state };
+  }
+}
+
+interface AppProviderProps {
+  children: ReactNode;
+}
+
+export function AppProvider({ children }: AppProviderProps) {
+  const [state, dispatch] = useReducer(globalReducer, initialGlobalState);
+
+  return (
+    <AppGlobalContext.Provider value={{ state, dispatch }}>
+      {children}
+    </AppGlobalContext.Provider>
+  )
+}
+*/
