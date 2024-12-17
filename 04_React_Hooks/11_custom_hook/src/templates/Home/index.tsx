@@ -15,6 +15,7 @@ const useFetch = (url: RequestInfo | URL, options?: RequestInit): [Post[], boole
   // useMemo é usado para garantir que o objeto de options tenha uma referência estável dentro do hook, 
   // evitando que o useEffect seja disparado desnecessariamente caso options não mude.
   const stableOptions = useMemo(() => options, [options]);
+  const stableUrl = useMemo(() => url, [url]);
 
   useEffect(() => {
     console.log('useEffect disparado');
@@ -23,9 +24,13 @@ const useFetch = (url: RequestInfo | URL, options?: RequestInit): [Post[], boole
     const fetchData = async () => {
       await new Promise((r) => setTimeout(r, 3000));
       try {
-        const response = await fetch(url, stableOptions);
+        const response = await fetch(stableUrl, stableOptions);
+        if (response.status != 200) {
+          return undefined;
+        }
         const data = await response.json() as Post[];
-        setResult(data);
+        const normalizedData = Array.isArray(data) ? data : [data];
+        setResult(normalizedData);
       } catch (error) {
         throw error;
       } finally {
@@ -56,6 +61,8 @@ function Home() {
   if (result.length === 0) {
     return <div>No posts</div>
   }
+
+  console.log('result', result);
 
   return (
     <div>
