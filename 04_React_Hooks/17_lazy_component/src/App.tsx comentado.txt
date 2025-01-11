@@ -1,0 +1,41 @@
+import { lazy, Suspense, useState } from 'react';
+import './App.css';
+
+// Função principal do componente
+function App() {
+  // Estado `show` usado para controlar a exibição do componente Lazy
+  const [show, setShow] = useState(false);
+
+  // Função para carregar dinamicamente o componente Lazy
+  const loadLazyComponent = () => {
+    console.log(
+      "Load chamado... Com o componente já importado uma vez, o import não é executado novamente."
+    );
+    return import('./LazyComponent'); // Realiza o import dinâmico do componente Lazy
+  };
+
+  // Uso do React.lazy para criar um componente carregado sob demanda
+  const LazyComponent = lazy(loadLazyComponent);
+
+  return (
+    <>
+      {/* Botão que alterna a exibição do componente Lazy */}
+      <button
+        // Evento onMouseOver para carregar o componente antecipadamente (pré-carregamento)
+        onMouseOver={loadLazyComponent}
+        // Alterna o estado `show` ao clicar no botão
+        onClick={() => setShow(!show)}
+      >
+        Show Lazy - {show ? "On" : "Off"}
+      </button>
+
+      {/* Suspense exibe um fallback enquanto o componente Lazy é carregado */}
+      <Suspense fallback={<div>Carregando...</div>}>
+        {/* Renderiza o componente Lazy somente se `show` for true */}
+        {show && <LazyComponent />}
+      </Suspense>
+    </>
+  );
+}
+
+export default App;
