@@ -1,0 +1,5 @@
+SPA - Single Page Aplication
+CSR - Client Side Rendering
+SSG - Static Site Generation
+SSR - Server Side Rendereing
+ISG / ISR - Incremental Static Generation / Incremental Static Regeration
