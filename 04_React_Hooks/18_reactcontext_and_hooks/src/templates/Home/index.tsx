@@ -1,15 +1,18 @@
+import Button from "../../components/Button";
+import Heading from "../../components/Heading";
 import { useCounterContext } from "../../contexts/CounterContext"
 import { CounterActionTypes } from "../../contexts/CounterContext/actionTypes";
 
 function Home() {
-  const { counterState, counterDispatch } = useCounterContext();
+  const { counterDispatch } = useCounterContext();
 
   return (
     <>
-      <div>Home</div>
-      <p>Counter: {counterState.counter}</p>
-      <button onClick={() => counterDispatch({ type: CounterActionTypes.INCREASE })}>Increase</button>
-      <button onClick={() => counterDispatch({ type: CounterActionTypes.DECREASE })}>Decrease</button>
+      <Heading />
+      <Button onButtonClick={() => counterDispatch({ type: CounterActionTypes.INCREASE })}>Increase</Button>
+      <Button onButtonClick={() => counterDispatch({ type: CounterActionTypes.DECREASE })}>Decrease</Button>
+      <Button onButtonClick={() => counterDispatch({ type: CounterActionTypes.SET_COUNTER, payload: 10 })}>Set 10</Button>
+      <Button onButtonClick={() => counterDispatch({ type: CounterActionTypes.RESET })}>Reset</Button>
     </>
   )
 }
