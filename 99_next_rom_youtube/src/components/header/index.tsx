@@ -11,17 +11,17 @@ export function Header() {
 
         <nav>
           <ul className='flex items-center justify-center gap-2'>
-            <li>
+            <li className='hover:text-blue-500'>
               <Link href={"/contatos"}>Contatos</Link>
             </li>
-            <li>
+            <li className='hover:text-blue-500'>
               <Link href={"/dashboard"}>Dashboard</Link>
             </li>
-            <li>
+            <li className='hover:text-blue-500'>
               <Link href={"/posts"}>Posts</Link>
             </li>
-            <li>
-              <Link href={"/teste"}>Teste</Link>
+            <li className='hover:text-blue-500'>
+              <Link href={"/posts-client-side"}>Posts Client Side</Link>
             </li>
           </ul>
         </nav>

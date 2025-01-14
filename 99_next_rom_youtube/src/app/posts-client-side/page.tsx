@@ -9,7 +9,7 @@ interface PostProps {
   body: string;
 }
 
-function Teste() {
+function PostClientSide() {
   const [posts, setPosts] = useState<PostProps[]>([]);
 
   useEffect(() => {
@@ -24,7 +24,7 @@ function Teste() {
 
   return (
     <div>
-      <h1 className='text-center mt-5 mb-2 font-bold text-3x1'>Pagina Client</h1>
+      <h1 className='text-center mt-5 mb-2 font-bold text-3x1'>Pagina Client!!</h1>
       <button className='bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded' onClick={() => alert('Hello World')}>Posso ter um botão</button>
       <div className='flex flex-col gap-4 mx-2'>
         {posts && posts.map((post) => (
@@ -38,4 +38,4 @@ function Teste() {
   )
 }
 
-export default Teste
+export default PostClientSide

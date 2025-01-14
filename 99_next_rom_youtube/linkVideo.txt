@@ -1,2 +1,6 @@
 https://www.youtube.com/watch?v=e6FigV2fLC8
-até 40min
+até 4:51
+iniciar 'Server Actions'
+
+***
+Posso ter um server component e dentro dele um client component.

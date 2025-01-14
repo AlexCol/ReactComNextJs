@@ -1,6 +1,7 @@
+import { ClientSideComponent } from '@/components/client-side-component';
 import React from 'react'
 
-interface PostProps {
+export interface PostProps {
   userId: number;
   id: number;
   title: string;
@@ -22,7 +23,9 @@ async function Posts() {
 
   return (
     <div>
-      <h1 className='text-center mt-5 mb-2 cont-bold text-3x1'>Todos os posts</h1>
+      <ClientSideComponent posts={posts} />
+
+      <h1 className='text-center mt-5 mb-2 cont-bold text-3x1'>Todos os posts!!</h1>
       <div className='flex flex-col gap-4 mx-2'>
         {posts && posts.map((post) => (
           <div key={post.id} className='bg-gray-200 p-4 rounded-md'>
