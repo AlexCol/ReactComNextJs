@@ -18,4 +18,6 @@ Ctrl + K Ctrl + J
 https://jsonplaceholder.typicode.com/
 
 Next:
-create-next-app .
+npx create-next-app .
+ou
+npx create-next-app@latest .
