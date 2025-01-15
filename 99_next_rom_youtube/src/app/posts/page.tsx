@@ -1,4 +1,5 @@
 import { ClientSideComponent } from '@/components/client-side-component';
+import Link from 'next/link';
 import React from 'react'
 
 export interface PostProps {
@@ -31,6 +32,9 @@ async function Posts() {
           <div key={post.id} className='bg-gray-200 p-4 rounded-md'>
             <h2 className='font-bold'>{post.title}</h2>
             <p>{post.body}</p>
+            <div className='mt-2 text-right text-blue-500'>
+              <Link href={`posts/${post.id}`}>Ver detalhes do post</Link>
+            </div>
           </div>
         ))}
       </div>

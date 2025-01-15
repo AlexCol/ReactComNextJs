@@ -1,6 +1,5 @@
 https://www.youtube.com/watch?v=e6FigV2fLC8
-até 4:51
-iniciar 'Server Actions'
+1:03:17 - Revalidate, Cache, ISR
 
 ***
 Posso ter um server component e dentro dele um client component.
