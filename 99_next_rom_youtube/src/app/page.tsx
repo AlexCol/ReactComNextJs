@@ -21,10 +21,14 @@ export const metadata: Metadata = {
   },
 }
 
+export const revalidate = 5;
 function Home() {
+  const randomNumber = Math.random() * 10;
+
   return (
     <div>
       <h1>Home</h1>
+      <p>Numero gerado randomicamente: {randomNumber}</p>
     </div>
   )
 }

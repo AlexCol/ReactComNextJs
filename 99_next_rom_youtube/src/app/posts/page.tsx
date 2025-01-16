@@ -14,7 +14,12 @@ interface ResponseProps {
 }
 
 async function Posts() {
-  const response = await fetch('https://dummyjson.com/posts');
+  const response = await fetch('https://dummyjson.com/posts', {
+    cache: 'force-cache', //faz com que caso a página seja recarregada, os dados sejam pego de cache, não sendo feito uma nova requisição
+    next: {
+      revalidate: 60 //se a data da ultima requisição for maior que 60 segundos, ele faz uma nova requisição
+    }
+  });
   const data: ResponseProps = await response.json();
   const posts = data.posts;
 
