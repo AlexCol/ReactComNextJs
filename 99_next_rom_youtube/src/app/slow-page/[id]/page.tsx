@@ -12,9 +12,11 @@ async function SlowPage(
       {/* o suspense é um componente que permite que você suspenda a renderização de um componente até que todas as promessas sejam resolvidas */}
       {/*com isso os demais compomentes que não precisam esperaram rodam normalmente*/}
       {/* se remover o suspense, vai ser travada a pagina toda até terminar (o que vai invocar o componente de loagin)*/}
-      <Suspense>
+      {/*<Suspense>
         <PostInfo id={id} />
       </Suspense>
+      */}
+      <PostInfo id={id} />
     </div>
   )
 }
