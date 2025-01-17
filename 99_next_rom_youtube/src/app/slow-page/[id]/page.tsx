@@ -1,5 +1,6 @@
 import React, { Suspense } from 'react'
 import { PostInfo } from './_components/post';
+import Loading from './loading';
 
 async function SlowPage(
   { params }: { params: Promise<{ id: string }> } //https://nextjs.org/docs/app/building-your-application/routing/dynamic-routes
@@ -12,11 +13,9 @@ async function SlowPage(
       {/* o suspense é um componente que permite que você suspenda a renderização de um componente até que todas as promessas sejam resolvidas */}
       {/*com isso os demais compomentes que não precisam esperaram rodam normalmente*/}
       {/* se remover o suspense, vai ser travada a pagina toda até terminar (o que vai invocar o componente de loagin)*/}
-      {/*<Suspense>
+      <Suspense fallback={<Loading />}>
         <PostInfo id={id} />
       </Suspense>
-      */}
-      <PostInfo id={id} />
     </div>
   )
 }
